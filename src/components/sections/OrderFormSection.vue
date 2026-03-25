@@ -4,10 +4,11 @@ import SectionContainer from '../base/SectionContainer.vue'
 import SectionHeading from '../base/SectionHeading.vue'
 import { buildWhatsAppLink } from '../../utils/whatsapp'
 import { siteProfile } from '../../data/site'
+import IconWa from '../../assets/wa.svg'
 
 const form = reactive({
   name: '',
-  product: 'Daging Sapi',
+  product: 'Sapi',
   qty: '',
   note: '',
 })
@@ -57,7 +58,7 @@ const submitToWhatsApp = () => {
 
 <template>
   <SectionContainer>
-    <section class="py-12">
+    <section id="order" class="py-12">
       <SectionHeading
         label="Pemesanan Cepat"
         title="Isi Data Singkat, Lanjutkan ke WhatsApp"
@@ -86,9 +87,9 @@ const submitToWhatsApp = () => {
             v-model="form.product"
             class="mt-2 w-full rounded-xl border border-brand-200 bg-white/90 px-3 py-2 text-slate-800 outline-none focus:border-brand-600 dark:border-brand-800 dark:bg-[#2a2021] dark:text-slate-100"
           >
-            <option>Daging Kambing</option>
-            <option>Daging Sapi</option>
-            <option>Ayam Broiler/Negeri</option>
+            <option>Kambing/Domba</option>
+            <option>Sapi</option>
+            <option>Ayam</option>
           </select>
         </label>
         <label class="text-sm font-medium text-slate-700 dark:text-slate-200">
@@ -129,6 +130,7 @@ const submitToWhatsApp = () => {
           :disabled="!form.name.trim() || !form.qty.trim()"
           class="sm:col-span-2 inline-flex items-center justify-center rounded-full bg-brand-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:bg-brand-400"
         >
+          <img :src="IconWa" alt="WhatsApp" class="inline-block h-5 w-5 mr-2" />
           Kirim ke WhatsApp
         </button>
       </form>

@@ -6,7 +6,7 @@ import { faqList } from '../../data/faq'
 
 <template>
   <SectionContainer>
-    <section class="py-12">
+    <section id="faq" class="py-12">
       <SectionHeading label="FAQ" title="Pertanyaan yang Sering Ditanyakan" />
       <div class="space-y-3">
         <details v-for="item in faqList" :key="item.question" class="card-panel p-5">

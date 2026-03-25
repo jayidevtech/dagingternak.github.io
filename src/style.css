@@ -64,6 +64,15 @@
   #app {
     @apply min-h-screen;
   }
+
+  @screen md {
+    section[id] {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }
 
 @layer components {
