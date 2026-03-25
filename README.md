@@ -28,15 +28,18 @@ npm run preview
 - `src/data/`: konten statis (produk, faq, testimoni, profil bisnis)
 - `public/`: aset publik termasuk `robots.txt`, `sitemap.xml`, dan `og-cover.svg`
 
-## Deploy Statis
+## Deploy ke GitHub Pages
 
-Proyek siap deploy ke Vercel / Netlify.
+Deploy berjalan otomatis dari branch `main` lewat GitHub Actions.
 
-1. Push repository ke Git provider.
-2. Import project ke Vercel/Netlify.
-3. Build command: `npm run build`
-4. Output directory: `dist`
-5. Pastikan domain final sudah digunakan pada `siteUrl` di `src/data/site.js`.
+1. Masuk ke GitHub repo -> `Settings` -> `Pages`.
+2. Pada bagian `Build and deployment`, pilih `Source: GitHub Actions`.
+3. Pastikan DNS subdomain `dagingternak.jayidev.tech` sudah mengarah ke GitHub Pages.
+4. File `public/CNAME` sudah disiapkan agar custom domain otomatis terbaca saat deploy.
+5. Workflow deploy ada di `.github/workflows/deploy-pages.yml`.
+
+Catatan:
+- Update `siteUrl` di `src/data/site.js` ke `https://dagingternak.jayidev.tech` agar canonical/OG URL konsisten.
 
 ## Smoke Test Cepat
 
