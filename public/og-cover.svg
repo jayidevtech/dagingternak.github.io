@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">DagingTernak - Reseller Daging Segar</title>
+  <desc id="desc">OG cover untuk promosi reseller daging kambing, sapi, dan ayam.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7f1d1d" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1040" cy="130" r="180" fill="#fca5a5" fill-opacity="0.2" />
+  <circle cx="180" cy="540" r="220" fill="#fecaca" fill-opacity="0.18" />
+  <rect x="90" y="90" width="1020" height="450" rx="32" fill="#ffffff" fill-opacity="0.08" />
+  <text x="140" y="240" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="68" font-weight="800">DagingTernak</text>
+  <text x="140" y="315" fill="#fee2e2" font-family="Manrope, Arial, sans-serif" font-size="38" font-weight="600">Reseller Daging Segar</text>
+  <text x="140" y="375" fill="#fecaca" font-family="Manrope, Arial, sans-serif" font-size="32">Kambing • Sapi • Ayam Broiler/Negeri</text>
+  <text x="140" y="450" fill="#ffe4e6" font-family="Manrope, Arial, sans-serif" font-size="28">Pemesanan Cepat via WhatsApp</text>
+</svg>

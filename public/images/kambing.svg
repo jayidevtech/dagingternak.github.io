@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustrasi Daging Kambing</title>
+  <desc id="desc">Ilustrasi kemasan daging kambing segar.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fee2e2" />
+      <stop offset="100%" stop-color="#fecaca" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)" />
+  <rect x="80" y="80" width="640" height="360" rx="34" fill="#ffffff" fill-opacity="0.86" />
+  <circle cx="220" cy="260" r="90" fill="#fca5a5" />
+  <circle cx="220" cy="260" r="44" fill="#ef4444" />
+  <rect x="330" y="190" width="320" height="30" rx="15" fill="#b91c1c" />
+  <rect x="330" y="245" width="250" height="22" rx="11" fill="#dc2626" fill-opacity="0.9" />
+  <rect x="330" y="287" width="280" height="22" rx="11" fill="#dc2626" fill-opacity="0.6" />
+  <text x="330" y="165" font-family="Manrope, sans-serif" font-size="28" font-weight="700" fill="#7f1d1d">Daging Kambing Fresh</text>
+</svg>
