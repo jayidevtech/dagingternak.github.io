@@ -1,7 +1,7 @@
 export const siteProfile = {
   brandName: 'DagingTernak',
   siteUrl: 'https://dagingternak.jayidev.tech',
-  whatsappNumber: '628947329246',
+  whatsappNumber: '6289647329246',
   email: 'dagingternak@gmail.com',
   city: 'Majalengka',
   tagline: 'Supplier daging potong segar untuk rumah tangga, UMKM, dan kebutuhan acara.',
