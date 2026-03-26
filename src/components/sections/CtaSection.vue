@@ -3,12 +3,20 @@ import SectionContainer from '../base/SectionContainer.vue'
 import BaseButton from '../base/BaseButton.vue'
 import { siteProfile } from '../../data/site'
 import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { trackAndNavigate } from '../../utils/analytics'
 import iconWa from '../../assets/wa.svg'
 
 const ctaLink = buildWhatsAppLink(
   siteProfile.whatsappNumber,
   `Halo ${siteProfile.brandName}, saya siap order. Mohon info stok, harga terbaru, dan estimasi kirim.`
 )
+
+const handleCtaWhatsAppClick = () => {
+  trackAndNavigate(ctaLink, 'wa_click', {
+    source_section: 'bottom_cta',
+    city: siteProfile.city,
+  })
+}
 </script>
 
 <template>
@@ -19,7 +27,7 @@ const ctaLink = buildWhatsAppLink(
         <h2 class="mt-3 text-3xl font-semibold text-white">Kunci Stok dan Harga Hari Ini Sebelum Habis</h2>
         <p class="mt-3 w-full text-red-100">Kirim kebutuhan Anda sekarang, tim kami akan bantu rekomendasi produk dan estimasi kirim paling cepat.</p>
         <div class="mt-6">
-          <BaseButton :href="ctaLink" variant="secondary">
+          <BaseButton :href="ctaLink" variant="secondary" @click.prevent="handleCtaWhatsAppClick">
             <img :src="iconWa" alt="WhatsApp" class="inline-block h-5 w-5 mr-2" />
             Chat WhatsApp Sekarang
           </BaseButton>

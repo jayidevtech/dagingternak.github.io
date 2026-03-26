@@ -3,11 +3,25 @@ import BaseButton from '../base/BaseButton.vue'
 import SectionContainer from '../base/SectionContainer.vue'
 import { siteProfile } from '../../data/site'
 import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { trackAndNavigate, trackEvent } from '../../utils/analytics'
 
 import waIcon from "../../assets/wa.svg"
 
 const heroMessage = `Halo ${siteProfile.brandName}, saya ingin tanya stok dan harga daging hari ini.`
 const waLink = buildWhatsAppLink(siteProfile.whatsappNumber, heroMessage)
+
+const handleHeroWhatsAppClick = () => {
+  trackAndNavigate(waLink, 'wa_click', {
+    source_section: 'hero',
+    city: siteProfile.city,
+  })
+}
+
+const handleHeroPriceClick = () => {
+  trackEvent('price_view_click', {
+    source_section: 'hero',
+  })
+}
 
 const trustBadges = [
   { icon: '🔪', label: 'Potong Fresh Setiap Hari', desc: 'Daging dipotong pagi hari, dikirim dalam kondisi segar.' },
@@ -29,11 +43,11 @@ const trustBadges = [
           {{ siteProfile.tagline }} Harga transparan, bisa custom potongan, dan respons order cepat via WhatsApp.
         </p>
         <div class="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-          <BaseButton :href="waLink" class="w-full sm:w-auto">
+          <BaseButton :href="waLink" class="w-full sm:w-auto" @click.prevent="handleHeroWhatsAppClick">
             <img :src="waIcon" alt="WhatsApp" class="inline-block h-5 w-5 mr-2" />
             Pesan via WhatsApp
           </BaseButton>
-          <BaseButton href="#harga" variant="secondary" class="w-full sm:w-auto">Lihat Harga Produk</BaseButton>
+          <BaseButton href="#harga" variant="secondary" class="w-full sm:w-auto" @click="handleHeroPriceClick">Lihat Harga Produk</BaseButton>
         </div>
       </div>
       <div class="card-panel rounded-[2rem] border-brand-200 bg-gradient-to-br from-brand-50 to-rose-100 p-6 dark:border-brand-900 dark:from-brand-900/40 dark:to-rose-950/20">

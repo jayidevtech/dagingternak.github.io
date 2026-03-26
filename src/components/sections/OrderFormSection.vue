@@ -3,6 +3,7 @@ import { reactive, computed } from 'vue'
 import SectionContainer from '../base/SectionContainer.vue'
 import SectionHeading from '../base/SectionHeading.vue'
 import { buildWhatsAppLink } from '../../utils/whatsapp'
+import { trackAndNavigate } from '../../utils/analytics'
 import { siteProfile } from '../../data/site'
 import IconWa from '../../assets/wa.svg'
 
@@ -52,7 +53,13 @@ const submitToWhatsApp = () => {
 
   if (!isFormValid.value) return
 
-  window.location.href = whatsappHref.value
+  trackAndNavigate(whatsappHref.value, 'order_submit', {
+    source_section: 'order_form',
+    product: form.product,
+    qty_filled: Boolean(form.qty.trim()),
+    note_filled: Boolean(form.note.trim()),
+    city: siteProfile.city,
+  })
 }
 </script>
 

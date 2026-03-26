@@ -2,6 +2,7 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { siteProfile } from '../../data/site'
 import { useTheme } from '../../composables/useTheme'
+import { trackAndNavigate } from '../../utils/analytics'
 import waIcon from '../../assets/wa.svg'
 
 const navItems = [
@@ -68,6 +69,13 @@ const setActiveByScroll = () => {
 
 const handleNavClick = (href) => {
   activeNav.value = href
+}
+
+const handleHeaderWhatsAppClick = (sourceSection) => {
+  trackAndNavigate(`https://wa.me/${siteProfile.whatsappNumber}`, 'wa_click', {
+    source_section: sourceSection,
+    city: siteProfile.city,
+  })
 }
 
 onMounted(() => {
@@ -173,6 +181,7 @@ onBeforeUnmount(() => {
         </button>
         <a
           :href="`https://wa.me/${siteProfile.whatsappNumber}`"
+          @click.prevent="handleHeaderWhatsAppClick('header_desktop')"
           class="hidden min-h-11 items-center rounded-full bg-brand-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-800 md:inline-flex"
         >
           <img :src="waIcon" alt="" aria-hidden="true" class="mr-2 h-5 w-5" />
@@ -207,6 +216,7 @@ onBeforeUnmount(() => {
 
         <a
           :href="`https://wa.me/${siteProfile.whatsappNumber}`"
+          @click.prevent="handleHeaderWhatsAppClick('header_mobile')"
           @click="closeMobileMenu"
           class="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-brand-700 dark:bg-brand-900 px-4 py-2 text-sm font-semibold text-white dark:border-2 dark:border-brand-900 transition hover:bg-brand-800"
         >
