@@ -12,7 +12,10 @@ import { siteProfile } from '../../data/site'
 
     <!-- Copyright -->
     <div class="border-t border-brand-100 bg-white/90 py-4 text-center text-sm text-slate-500 dark:border-brand-900 dark:bg-[#161112]/90 dark:text-slate-400">
-      &copy; {{ new Date().getFullYear() }} {{ siteProfile.brandName }}. All rights reserved.<br />Designed by <a href="https://jayidev.tech" target="_blank" class="font-semibold text-brand-700 hover:underline">JAYIDEVTECH</a>
+      <div class="section-shell flex flex-col md:flex-row justify-center md:justify-between items-center gap-2 md:gap-4">
+        <p>&copy; {{ new Date().getFullYear() }} {{ siteProfile.brandName }}. All rights reserved.</p>
+        <p>Designed with ❤️ by <a href="https://jayidev.tech" target="_blank" class="font-semibold text-brand-700 hover:underline">JAYIDEVTECH</a></p>
+      </div>
     </div>
   </footer>
 </template>

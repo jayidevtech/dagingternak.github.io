@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dagingternak-landing-page.vercel.app/sitemap.xml
+Sitemap: https://dagingternak.jayidev.tech/sitemap.xml
